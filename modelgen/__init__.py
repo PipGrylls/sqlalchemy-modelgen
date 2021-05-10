@@ -4,6 +4,7 @@ from .base import Base
 from .helper import Helper
 import modelgen.constants
 from .templates.alchemygen import alchemygen, metagen
+from .templates.flaskgen import flaskgen
 from os import path, getcwd, walk
 from jinja2 import Template
 from pathlib import Path
