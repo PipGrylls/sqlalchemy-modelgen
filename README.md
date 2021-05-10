@@ -1,4 +1,14 @@
 
+# Purpose of this fork
+
+This for is designed to add functionality to use flask-SQLAlchemy to be able to compile yaml schema to 
+flask models. 
+
+My use case is to take large data tables with hundreds of columns parse the data-headers into yaml then 
+create classes that can be inherited to add columns to a custom base model that defines the indexing e.t.c.
+
+# Original ReadMe
+
 # sqlalchemy-modelgen
 
 [![codecov](https://codecov.io/gh/shree14/sqlalchemy-modelgen/branch/main/graph/badge.svg?token=N0XQENE6IL)](https://codecov.io/gh/shree14/sqlalchemy-modelgen)
