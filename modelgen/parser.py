@@ -1,4 +1,5 @@
-from modelgen import constants as cst, Helper
+from . import constants as cst, Helper
+
 
 class Parser(Helper):
 

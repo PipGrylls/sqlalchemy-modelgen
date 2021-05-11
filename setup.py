@@ -12,7 +12,7 @@ setup(
         'alembic>=1.5.8',
         'Cerberus>=1.3.3',
         'inflect',
-        'Jinja2>=2.11.3',
+        'jinja2>=2.11.3',
         'mysql-connector-python>=8.0.23',
         'psycopg2-binary>=2.8.6',
         'python-dotenv>=0.17.0',
@@ -25,7 +25,7 @@ setup(
     setup_requires=[
         'alembic>=1.5.8',
         'Cerberus>=1.3.3',
-        'Jinja2>=2.11.3',
+        'jinja2>=2.11.3',
         'mysql-connector-python>=8.0.23',
         'psycopg2-binary>=2.8.6',
         'python-dotenv>=0.17.0',

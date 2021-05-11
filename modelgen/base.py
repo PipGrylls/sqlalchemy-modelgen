@@ -1,4 +1,4 @@
-from modelgen.log_source import Logging
+from .log_source import Logging
 from os import environ
 
 

@@ -1,11 +1,11 @@
-from os import path, getcwd
+from os import path, getcwd, walk
 from pathlib import Path
 from shutil import copyfile, copytree
 from typing import Optional
+from jinja2 import Template
 
-from modelgen.helper import Helper
-from modelgen import (__file__, constants, Validate, Parser,
-                      Template, alchemygen, flaskgen, metagen, walk)
+from .helper import Helper
+from . import (__file__, constants, Validate, Parser, alchemygen, flaskgen, metagen)
 
 
 class ModelGenerator(Helper):

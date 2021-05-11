@@ -1,6 +1,7 @@
 from modelgen import Base
 from yaml import safe_load, YAMLError
 
+
 class Helper(Base):
 
     def __init__(self):
