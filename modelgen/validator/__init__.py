@@ -1,11 +1,12 @@
 from yaml import safe_load
 from cerberus import Validator
 from typing import Union
-from modelgen.validator.schema import (table_key_schema, 
-                                       columns_key_schema, 
-                                       columns_value_schema
-                                       )
+from .schema import (table_key_schema,
+                     columns_key_schema,
+                     columns_value_schema
+                     )
 from modelgen import Helper
+
 
 class Validate(Helper):
 
