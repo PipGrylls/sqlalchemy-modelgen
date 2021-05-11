@@ -1,6 +1,7 @@
 from modelgen.log_source import Logging
 from os import environ
 
+
 class Base:
 
     def __init__(self):
