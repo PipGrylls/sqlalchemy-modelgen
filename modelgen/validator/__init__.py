@@ -5,7 +5,7 @@ from .schema import (table_key_schema,
                      columns_key_schema,
                      columns_value_schema
                      )
-from modelgen import Helper
+from ..helper import Helper
 
 
 class Validate(Helper):
