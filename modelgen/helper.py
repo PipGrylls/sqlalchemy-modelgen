@@ -1,4 +1,4 @@
-from modelgen import Base
+from . import Base
 from yaml import safe_load, YAMLError
 
 
