@@ -133,3 +133,7 @@ templates/userinfo.yaml
 # vscode
 .vscode/*
 .vscode/settings.json
+
+# jetbrains
+.idea/
+.idea/sonarlint/

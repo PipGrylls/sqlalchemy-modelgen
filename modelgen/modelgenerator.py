@@ -217,14 +217,15 @@ class ModelGenerator(Helper):
                       file: str = None,
                       alembic: bool = False,
                       target: str = None) -> bool:
-        if bool(createmodel) and bool(file):
+        if bool(createmodel):
+            self._find_checkpoint_file()
+        if bool(file):
             if file.endswith('.yaml'):
                 datasource = file.split('.yaml')[0].split('/')[-1]
             elif file.endswith('yml'):
                 datasource = file.split('.yml')[0].split('/')[-1]
             else:
                 raise NameError('Please specify a .yaml or .yml file')
-            self._find_checkpoint_file()
             self.logger.info(f"Creating models at {file}")
             self._create_model(datasource=datasource, alembic=alembic, target=target)
             return True
