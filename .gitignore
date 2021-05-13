@@ -137,3 +137,4 @@ templates/userinfo.yaml
 # jetbrains
 .idea/
 .idea/sonarlint/
+.idea/sonarlint/issuestore/index.pb

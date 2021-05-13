@@ -9,7 +9,6 @@ class Parser(Helper):
         self.tables = list(self.data[cst.key_tables].keys())
         self.schema = self.get_tables_w_columns()
 
-
     def get_tables_w_columns(self) -> dict:
         self.logger.info('Creating schema from YAML')
         schema = dict()

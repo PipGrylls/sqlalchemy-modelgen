@@ -133,7 +133,7 @@ class ModelGenerator(Helper):
             return True
 
     def _create_model(self, datasource: str, alembic: bool = False,
-                      filepath: str = None, target: str = None) -> bool:
+                      filepath: str = None, target: str = None, out_file: str = None) -> bool:
         """
         Create sqlalchemy code, based on the schema
         defined in the yaml schema template file. The code files
@@ -178,7 +178,10 @@ class ModelGenerator(Helper):
         src_template = Template(template)
         py_code = src_template.render(datasource=datasource, yaml_data=parser.data, cst=constants, bool=bool)
         Path(constants.models_folder).mkdir(parents=True, exist_ok=True)
-        py_filepath = path.join(constants.models_folder, f'{datasource}.py')
+        if out_file is None:
+            py_filepath = path.join(constants.models_folder, f'{datasource}.py')
+        else:
+            py_filepath = out_file
         self.write_to_file(path=py_filepath, data=py_code)
         if alembic:
             self._create_alembic_meta()
@@ -216,9 +219,9 @@ class ModelGenerator(Helper):
                       createmodel: bool = False,
                       file: str = None,
                       alembic: bool = False,
-                      target: str = None) -> bool:
-        if bool(createmodel):
-            self._find_checkpoint_file()
+                      target: str = None,
+                      out_file: str = None) -> bool:
+
         if bool(file):
             if file.endswith('.yaml'):
                 datasource = file.split('.yaml')[0].split('/')[-1]
@@ -226,7 +229,12 @@ class ModelGenerator(Helper):
                 datasource = file.split('.yml')[0].split('/')[-1]
             else:
                 raise NameError('Please specify a .yaml or .yml file')
-            self.logger.info(f"Creating models at {file}")
-            self._create_model(datasource=datasource, alembic=alembic, target=target)
+            if bool(createmodel):
+                self._find_checkpoint_file()
+                self.logger.info(f"Creating models at {file}")
+                self._create_model(datasource=datasource, alembic=alembic, target=target)
+            else:
+                self.logger.info(f"Creating models at {file}")
+                self._create_model(datasource=file, alembic=alembic, target=target, out_file=out_file)
             return True
         return None
