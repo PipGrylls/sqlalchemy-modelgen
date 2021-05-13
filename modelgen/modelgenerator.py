@@ -235,6 +235,6 @@ class ModelGenerator(Helper):
                 self._create_model(datasource=datasource, alembic=alembic, target=target)
             else:
                 self.logger.info(f"Creating models at {file}")
-                self._create_model(datasource=file, alembic=alembic, target=target, out_file=out_file)
+                self._create_model(datasource=file, filepath=file, alembic=alembic, target=target, out_file=out_file)
             return True
         return None
